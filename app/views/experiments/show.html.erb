@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title></title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+	<style type="text/css">
+	.macbook {
+           width: 790px;
+           height: 360px;
+          }
+
+		@media only screen and (max-width : 640px) {
+        .container {
+            margin-top: 0px;
+           }
+         .macbook {
+           width: 360px;
+           height: 360px;
+          }
+        
+     
+    
+	</style>
+	</head>
+	<body>
+		
+		<div class="site-content">
+		
+			<main class="main-content">
+				<div class="page-head">
+					<div class="container">
+						
+						<h1 class="page-title"><%= @experiment.title .html_safe %></h1>
+					</div>
+				</div>
+                
+                <div class="fullwidth-block">
+					<div class="container">
+					
+						  <div class="col-sm-12">
+			
+							<iframe  class="macbook" src='https://www.youtube.com/embed/<%= @experiment.youtube_link .html_safe %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="fullwidth-block">
+					<div class="container">
+						<div class="col-sm-6">
+							<h2>Theory</h2>
+							<p><%= @experiment.description .html_safe %></p>
+							<p><%= @experiment.lab.name %></p>
+						</div>
+						<div class="col-sm-6">
+							<h2>components used</h2>
+							
+                 			<a><%= link_to "Back", root_path, class: "button" %></a>
+							<% if user_signed_in? %>
+                            <% if @experiment.user_id == current_user.id %>
+                            <%= link_to "Edit", edit_experiment_path(@experiment) %>
+                            <%= link_to "Delete", experiment_path(@experiment), method: :delete, data: { confirm: "Are you sure?" } %>
+                            <% end %>
+                           <% end %>
+						</div>
+						<%= render 'disqus' %>
+					</div>
+				</div>
+	
+			</main> <!-- .main-content -->
+           
+		</div> <!-- .main-content -->
+		
+    
+
+	</body>
+</html>

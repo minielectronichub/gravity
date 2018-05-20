@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="UTF-8">
+     <meta name="description" content="about me">
+     <meta name="keywords" content="HTML,CSS,Rails,Arduino projects">
+     <meta name="author" content="sanjay pinnaka">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Practical hub</title>
+     <%= csrf_meta_tags %>
+
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
+  </head>
+
+  <body>
+ 
+  <a> <%= link_to "", root_path, id: "logo" %></a> 
+   
+  <nav>
+
+  <input type="checkbox" id="nav" class="hidden"/>
+  <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+  <div class="nav-container">
+    <ul>
+        <li><%= link_to "Home", root_path, class: "current" %></li>
+        <li><a href="#"><%= link_to 'About', about_path %></a></li>
+        <li><a href="#">Contact</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to('signout', destroy_user_session_path, method: :delete) %> </li>
+          <li> <%= link_to "Create experiment", new_experiment_path %></li>
+        <% else %>  
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+         
+        <% end %>
+     </ul>
+   </div>
+  </nav>
+
+
+
+
+
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p> 
+  
+    <%= yield %>
+    
+     <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6 col-md-3">
+              <div class="widget">
+                <h3 class="widget-title">Contact</h3>
+                <address>
+                  <strong>Practical hub</strong>
+                  <p>poranki,vijayawada, krishna district</p>
+                  <p><a href="#">0000 0000 0000</a><br>
+                  <a href="#">sanjaypinnaka@gmail.com</a></p>
+                </address>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <div class="widget">
+                <h3 class="widget-title">Menu</h3>
+                <ul class="">
+                  <li><a href="#">Home</a></li> 
+                  <li><a href="#">About</a></li> 
+                  <li><a href="#">Contact</a></li> 
+                  <li><a href="#">Login</a></li> 
+                  <li><a href="#">Register</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <div class="widget">
+                <h3 class="widget-title">News letter</h3>
+                <ul class="dash-list">
+                  <form class="flex-form">
+                        <input type="text_field" name="" placeholder="enter your email">
+                        <input type="submit" name="">
+                 </form>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <div class="widget">
+                <h3 class="widget-title">Follow us</h3>
+                  <div class="social-links">
+                  <a href="#"><i class="fa fa-facebook-f"></i></a>
+                  <a href="#"><i class="fa fa-google-plus-g"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-github"></i></a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+ 
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+window.$_API = undefined; 
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5ad849f25f7cdf4f05330b39/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script -->
+ 
+ </body>
+</html>
