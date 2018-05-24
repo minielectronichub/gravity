@@ -451,7 +451,7 @@ form textarea {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 10px;
+  padding-left: 8px;
   padding-right: 0px;
   *zoom: 1; }
   .container:after {
@@ -1437,7 +1437,7 @@ form textarea {
     padding: 0px 30px; }
 
 .fullwidth-block {
-  padding: 0px 0; }
+  padding: 0px 10px; }
   .fullwidth-block img {
     max-width: 100%; }
 
@@ -1539,7 +1539,7 @@ form textarea {
     background-color: #303236;
     color: white; }
 .social-links img {
-  width: 50px;
+  width: 45px;
 }
 
 
