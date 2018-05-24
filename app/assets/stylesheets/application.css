@@ -1518,7 +1518,7 @@ form textarea {
         top: 5px; }
 
 .social-links a {
-  width: 50px;
+  width: 40px;
   height: 50px;
   border-radius: 50%;
   display: inline-block;
@@ -1533,6 +1533,9 @@ form textarea {
   .social-links a:hover {
     background-color: #303236;
     color: white; }
+.social-links img {
+  width: 50px;
+}
 
 /*# sourceMappingURL=style.css.map */
 
