@@ -32,7 +32,7 @@
     <ul>
         <li><%= link_to "Home", root_path, class: "current" %></li>
         <li><a href="#"><%= link_to 'About', about_path %></a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Portfolio</a></li>
         <% if user_signed_in? %>
           <li><%= link_to('signout', destroy_user_session_path, method: :delete) %> </li>
           <li> <%= link_to "Create experiment", new_experiment_path %></li>
@@ -75,7 +75,7 @@
                 <ul class="">
                   <li><%= link_to "Home", root_path %></li> 
                   <li><%= link_to 'About', about_path %></li> 
-                  <li><a href="#">Contact</a></li> 
+                  <li><a href="#">Portfolio</a></li> 
                   <% if user_signed_in? %>
                   <li><%= link_to('signout', destroy_user_session_path, method: :delete) %> </li>
                   <li> <%= link_to "Create experiment", new_experiment_path %></li>
