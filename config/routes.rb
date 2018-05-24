@@ -6,6 +6,7 @@ Rails.application.routes.draw do
  
   devise_for :users
   resources :experiments 
+  resources :labs
   
   match '/welcome/about' => 'welcome#about', as: :about, via: :get
   get '/search' => "experiments#search"

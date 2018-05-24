@@ -9,7 +9,13 @@
 </head>
  <body> 
   <% if user_signed_in? %>
-  <section class="main">  
+
+
+
+
+  <section class="main"> 
+
+
    <div class="cover">
     <%= form_tag search_path, method: :get, class: "flex-form" do %>
     <%= text_field_tag :title, nil, placeholder: 'Search experiment' %>
@@ -17,21 +23,21 @@
     <% end %>
   </div> 
 
-   <div class="drop">
-       <h1> select labs </h1>
+
+
+    <div class="drop">     
+      <h1> select sem </h1>
        <div class="dropdown">
-        <button class="dropbtn">Select your lab</button>
-        <% Lab.all.each do |lab| %>
+        <button class="dropbtn">Select your sem</button>
+        <% Sem.all.each do |sem| %>
             <div class="dropdown-content">
-             <a href="" class="<%= 'active' if params[:lab] == lab.name %>"><%= options_for_select(link_to lab.name, experiments_path(lab: lab.name)) %></a>
-         <% end %>    
-           </div>
+             <a href="" class="<%= 'active' if params[:sem] == sem.name %>"><%= options_for_select(link_to sem.name, labs_path(sem: sem.name)) %></a>
+         <% end %>
+       </div>
        </div>
      </div>
 
-
-
-
+  
 
 
    </section>

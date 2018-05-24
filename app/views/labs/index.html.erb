@@ -1,0 +1,27 @@
+<style type="text/css">
+ h1 {
+   color: #000;
+ }
+  .site-footer {
+
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+
+}
+body {
+    margin-bottom:50px;
+}
+</style>
+
+
+    <h1 class="current-sem"><%= params[:sem] %></h1>
+<% if @labs.count == 0 %>
+    <h1>There are no labs currently in this sem</h1>
+<% else %>
+   <% @labs.each do |lab| %>
+     <h3><%= link_to lab.name, lab_path(lab) %></h3>
+   <% end %>
+<% end %>

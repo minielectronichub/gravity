@@ -1,0 +1,31 @@
+<style type="text/css">
+ h1 {
+   color: #000;
+ }
+ .site-footer {
+
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+
+}
+body {
+    margin-bottom:50px;
+}
+</style>
+
+
+<h1><%= @lab.name %></h1>
+
+
+<% if @experiments.count == 0 %>
+ <h1>There are no experiments currently in this lab</h1>
+ <% else %>
+
+<% @experiments.each do |experiment| %>
+     <h1> <%= link_to experiment.title, experiment_path(experiment) %></h1>
+<% end %>
+<% end %>
+
