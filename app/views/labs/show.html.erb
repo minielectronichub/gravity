@@ -7,18 +7,8 @@
  h3 {
  	text-align: center;
  }
- .site-footer {
 
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin-bottom: 0px;
 
-}
-body {
-    margin-bottom:50px;
-}
 </style>
 
 
@@ -26,11 +16,11 @@ body {
 
 
 <% if @experiments.count == 0 %>
- <h1>There are no experiments currently in this lab</h1>
+ <h3>There are no experiments currently in this lab</h3>
  <% else %>
 
 <% @experiments.each do |experiment| %>
-     <h1> <%= link_to experiment.title, experiment_path(experiment) %></h1>
+     <h3> <%= link_to experiment.title, experiment_path(experiment) %></h3>
 <% end %>
 <% end %>
 
