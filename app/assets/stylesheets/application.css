@@ -1494,6 +1494,7 @@ form textarea {
   font-size: 14px;
   font-size: 0.875em; }
   .site-footer .widget {
+
     margin-bottom: 30px; }
   .site-footer .widget-title {
     color: #caccd3;
@@ -1514,22 +1515,24 @@ form textarea {
         position: absolute;
         left: 0;
         top: 5px; }
-
+.social-links  {
+   width: 391px;
+}
 .social-links a {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   display: inline-block;
-  background-color: #45474c;
+  background-color: #303236;
   color: white;
   text-align: center;
   font-size: 20px;
   font-size: 1.25em;
   line-height: 2.6;
-  margin-right: 10px;
+  margin-right: 25px;
   margin-bottom: 10px; }
   .social-links a:hover {
-    background-color: #ed5151;
+    background-color: #303236;
     color: white; }
 
 /*# sourceMappingURL=style.css.map */
