@@ -1,6 +1,11 @@
 <style type="text/css">
  h1 {
    color: #000;
+   text-align: center;
+   text-decoration: underline;
+ }
+ h3 {
+ 	text-align: center;
  }
   .site-footer {
 
@@ -19,7 +24,7 @@ body {
 
     <h1 class="current-sem"><%= params[:sem] %></h1>
 <% if @labs.count == 0 %>
-    <h1>There are no labs currently in this sem</h1>
+    <h3>There are no labs currently in this sem</h3>
 <% else %>
    <% @labs.each do |lab| %>
      <h3><%= link_to lab.name, lab_path(lab) %></h3>
