@@ -451,7 +451,7 @@ form textarea {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 0px;
+  padding-left: 10px;
   padding-right: 0px;
   *zoom: 1; }
   .container:after {
@@ -1493,7 +1493,7 @@ form textarea {
 
   background-color: #303236;
   color: #9a9ca1;
-  padding: 50px 0;
+  padding: 50px 10px;
   font-size: 14px;
   font-size: 0.875em; }
   .site-footer .widget {
