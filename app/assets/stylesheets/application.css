@@ -272,7 +272,7 @@ form textarea {
   height: 70px;
   border-radius: 50%;
   display: inline-block;
-  background: #ed5151;
+  background: #fff;
   text-align: center;
   padding-top: 20px;
   position: absolute;
@@ -1532,7 +1532,7 @@ form textarea {
   font-size: 20px;
   font-size: 1.25em;
   line-height: 2.6;
-  margin-right: 25px;
+  margin-right: 5px;
   margin-bottom: 10px; }
   .social-links a:hover {
     background-color: #303236;
