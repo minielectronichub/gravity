@@ -257,7 +257,7 @@ form textarea {
 .button, form input[type="submit"], form button, form input[type="reset"] {
   background: #ed5151;
   color: white;
-  padding: 10px;
+  padding: 0px;
   display: inline-block; }
 
 .feature {
@@ -1536,6 +1536,7 @@ form textarea {
 .social-links img {
   width: 50px;
 }
+
 
 /*# sourceMappingURL=style.css.map */
 
