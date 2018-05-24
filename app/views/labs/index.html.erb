@@ -6,12 +6,16 @@
  }
  h3 {
  	text-align: center;
+ 	color: #000;
  }
+.site-footer {
+ margin-top: 350px;
+}
 
 </style>
 
 
-    <h1 class="current-sem"><%= params[:sem] %></h1>
+ <h1 class="current-sem"><%= params[:sem] %></h1>
 <% if @labs.count == 0 %>
     <h3>There are no labs currently in this sem</h3>
 <% else %>
