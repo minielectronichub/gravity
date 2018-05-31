@@ -38,12 +38,16 @@ $(document).ready(function() {
       url: "/search",
       data: "query=" + $('input#title').val(),
       success: function(response) {
-        var experiments = response.experiments;     
+        console.log(response)
+        // console.log(response.experiments[0])
+        // console.log(response.experiments[1])
+        // console.log(response.experiments[1]["title"])
+        var experiments = response.experiments;
         for(var i = 0; i < experiments.length; i++) {
-          experiment_title = experiments[i].title;
-          experiment_url =  experiments[i].id;
+          experiment_title = experiments[i]["title"];
+          experiment_url =  experiments[i]["url"];
           $("#results").append(
-            '<p> <a href="' + experiment_url + '">' + experiment_title + ' </a></p>'
+            '<p> <a href="' + experiment_url + '">' + experiment_title + '</a></p>'
          );
         }
       } 
