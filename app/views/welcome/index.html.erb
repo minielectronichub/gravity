@@ -42,7 +42,7 @@ select {
   border-radius: .25em;
 }
 select {
-  width: 100%;
+  width: 49%;
   height: 100%;
   margin: 0;
   padding: 0 0 0 .5em;
@@ -75,157 +75,9 @@ select::-ms-expand {
 </style>
  <body> 
   <% if user_signed_in? %>
-
-
-
-
-  <section class="main"> 
-
-
-   <div class="cover">
-    <%= form_tag search_path, method: :get, class: "flex-form" do %>
-    <%= text_field_tag :title, nil, placeholder: 'Search experiment' %>
-    <%= submit_tag 'submit' %>
-    <% end %>
-  </div> 
-
-
-
-
-
-    <div class="drop">     
-       <div class="dropdown">
-        <button class="dropbtn">Select your sem</button>
-        <% Sem.all.each do |sem| %>
-            <div class="dropdown-content">
-             <a href="" class="<%= 'active' if params[:sem] == sem.name %>"><%= options_for_select(link_to sem.name, labs_path(sem: sem.name)) %></a>             
-         <% end %>
-       </div>
-       </div>
-     </div>
-
-
-
-   </section>
-
-     <% else %>
-
-    <div class="site-content">
-      <main class="main-content">
-        <div class="hero">
-          <div class="container">
-            <img src="assets/imac.png" alt="" class="imac">
-            <div class="hero-content">
-              <span>To continue</span> <br>
-              <span>please login or create a new account</span>
-            </div>
-           
-               <a><%= link_to "Log In", new_user_session_path, class: "button" %></a>
-               <a><%= link_to "Register", new_user_registration_path, class: "button" %></a>
-
-          </div>
-        </div> <!-- .hero -->
-
-        <div class="fullwidth-block">
-          <div class="container">
-            <div class="col-md-4">
-              <div class="feature">
-                <i class="feature-icon"><img src="assets/support.png" alt=""></i>
-                <h2 class="feature-title">Support</h2>
-                <p>Science of todat is technology of tomorrow. So stop thinking and start learning. suppot our website and subscribe to our youtube channel for daily updates </p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="feature">
-                <i class="feature-icon"><img src="assets/microscope.png" alt=""></i>
-                <h2 class="feature-title">Practical hub</h2>
-                <p>Are you forgetting the experiments ? fed up with confusing outputs ? want to have look at kits and apparatus ? Dont worry, we will help you to have a look at basic knowledge anfd procedure and apparatgus of the experiment. Each video will help you to have ease and comfort while performing it ......<%= link_to 'Know more', about_path %></p> 
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="feature">
-                <i class="feature-icon"><img src="assets/about.png" alt=""></i>
-                <h2 class="feature-title">About US</h2>
-                <p>Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main> <!-- .main-content -->
-     </div>
-
-
-
-
-
-
-
-        <div id="main">
-          <div class="inner">
-
-          <!-- Boxes -->
-            <div class="thumbnails">
-
-              <div class="box">
-                <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="assets/1.jpg" alt="" /></a>
-                <div class="inner">
-                  <h3>Electronics and communication </h3>
-                  <h4>The main objectives of the BTech (ECE) program are to produce students who are well prepared for Indian industry with necessary core competency to succeed long-term in engineering/entrepreneurship careers (post B.Tech), and who are well prepared to undertake PG studies and research careers. This course will help the students to bridge the gap between theory and practical aspects of technology.........</h4>
-                  <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
-                </div>
-              </div>
-
-              <div class="box">
-                <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="assets/7.jpg" alt="" /></a>
-                <div class="inner">
-                  <h3>computer science </h3>
-                  <h4>
-                    Computer Science Engineering (CSE) encompasses a variety of topics that relates to computation, like analysis of algorithms, programming languages, program design, software, and computer hardware. Computer Science engineering has roots in electrical engineering, mathematics, and linguistics. In the past Computer Science was taught as part of mathematics or engineering departments & in the recent days it has emerged as a separate engineering field....</h4>
-                  <a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
-                </div>
-              </div>
-
-              <div class="box">
-                <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="assets/8.jpg" alt="" /></a>
-                <div class="inner">
-                  <h3>Information technology</h3>
-                  <h4>SysAdmins are in charge of the day-to-day functioning of a company's computer network including organizing, installing, and supporting computer systems, networks, intranets, and other data communication systems. ... Some software developers focus more on the underlying computer systems that run devices or networks.................</h4>
-                  <a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
-                </div>
-              </div>
-
-              <div class="box">
-                <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="assets/4.jpg" alt="" /></a>
-                <div class="inner">
-                  <h3>EEE</h3>
-                  <h4>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</h4>
-                  <a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
-                </div>
-              </div>
-
-              <div class="box">
-                <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="assets/5.jpg" alt="" /></a>
-                <div class="inner">
-                  <h3>Civil</h3>
-                  <h4>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</h4>
-                  <a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
-                </div>
-              </div>
-
-              <div class="box">
-                <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="assets/6.jpg" alt="" /></a>
-                <div class="inner">
-                  <h3>Mechanical</h3>
-                  <h4>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</h4>
-                  <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
+    <%= render "logged_in_content" %>
+  <% else %>
+    <%= render "logged_out_content" %>
    <% end %>
 </body>
 </html>

@@ -11,16 +11,17 @@ class ExperimentsController < ApplicationController
     @experiments = Experiment.where(:lab_id => @lab_id).order("created_at DESC")
    end
   end
- 
-  
 
   def search    
 
-     # @experiments = Experiment.where(title: params[:title])
-    
-      @experiments = Experiment.where("title LIKE ?", "%#{params[:title]}%")
-      render "index"
-     
+    if(params[:query] && params[:query] != '')
+    @search_query = params[:query]
+    @experiments = Experiment.where("title LIKE ?" , "%#{@search_query}%")
+    @response = {status: "SUCCESS", experiments: @experiments}
+    respond_to do |format|
+       format.json {render json: @response} 
+      end
+    end
   end
 
   def show 

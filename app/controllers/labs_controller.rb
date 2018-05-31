@@ -1,23 +1,37 @@
 class LabsController < ApplicationController
  before_action :find_lab, only: [:show]
+
   def index
-     if params[:sem].blank?
-        @labs = Lab.all.order("created_at DESC")
-     else
-    @sem_id = Sem.find_by(name: params[:sem]).id
-    @labs = Lab.where(:sem_id => @sem_id).order("created_at DESC")
-   end
+    @labs = Lab.all
+    if params[:sem_id]
+      @sem = Sem.find(params[:sem_id])
+      @labs = @labs.where(sem_id: @sem.id)
+      if params[:branch_id]
+        @branch = Branch.find(params[:branch_id])
+        @labs = @labs.where(branch_id: @branch.id)
+      end
+    else
+      if params[:branch_id]
+        @branch = Branch.find(params[:branch_id])
+        @labs = @labs.where(branch_id: @branch.id)
+      end
+    end
+    @labs = @labs.order("created_at DESC")
   end
 
   def show 
-     @lab = Lab.find(params[:id])
-     @experiments = @lab.experiments.limit(50)
+    @lab = Lab.find(params[:id])
+    @experiments = @lab.experiments.limit(50)
   end
-  private 
+
+  private
+
   def lab_params
-    params.require(:lab).permit(:name)   
+    params.require(:lab).permit(:name)
   end
-   def find_lab
-   @lab = Lab.find(params[:id])
+
+  def find_lab
+    @lab = Lab.find(params[:id])
   end
+
 end

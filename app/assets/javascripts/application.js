@@ -21,5 +21,34 @@
 
 
 
+$(document).ready(function() {
 
+  $("form.flex-form").on("submit", function(e) {
+    e.preventDefault();
+  });
+
+
+	$("input#title").on('keyup', function() {
+
+    $("#results").html("");
+    var experiment_url, experiment_title;
+    $.ajax({
+      type: "GET",
+      dataType: "json",
+      url: "/search",
+      data: "query=" + $('input#title').val(),
+      success: function(response) {
+        var experiments = response.experiments;     
+        for(var i = 0; i < experiments.length; i++) {
+          experiment_title = experiments[i].title;
+          experiment_url =  experiments[i].id;
+          $("#results").append(
+            '<p> <a href="' + experiment_url + '">' + experiment_title + ' </a></p>'
+         );
+        }
+      } 
+    });
+
+  });
+});
 

@@ -1,0 +1,30 @@
+<section class="main"> 
+<div class="inner">
+  <div class="cover">
+    <%= form_tag search_path, method: :get, enforce_utf8: false, class: "flex-form", remote: true do %>
+      <%= text_field_tag :title, nil, placeholder: 'Search experiment' %> 
+    <% end %>
+  </div>
+
+  <div id="results"></div>
+</div> 
+
+  <div class="form">
+    <form action="/labs" method="get">
+      <select name="branch_id" id="branch_select">
+        <option>--select your branch--</option>
+        <% @branches.each do |branch| %>
+          <option value="<%= branch.id %>"><%= branch.name %></option>
+        <% end %>
+      </select>
+      <select name="sem_id" id="sem_select">
+        <option>--select your sem--</option>
+        <% @sems.each do |sem| %>
+          <option value="<%= sem.id %>"><%= sem.name %></option>
+        <% end %>
+      </select>
+      <input type="submit">
+    </form>
+  </div>
+
+</section>

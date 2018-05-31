@@ -257,7 +257,7 @@ form textarea {
 .button, form input[type="submit"], form button, form input[type="reset"] {
   background: #ed5151;
   color: white;
-  padding: 0px;
+  padding: 10px;
   display: inline-block; }
 
 .feature {
