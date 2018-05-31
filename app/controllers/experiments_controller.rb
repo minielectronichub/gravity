@@ -12,12 +12,16 @@ class ExperimentsController < ApplicationController
    end
   end
 
-  def search    
-
-    if(params[:query] && params[:query] != '')
+  def search
     @search_query = params[:query]
     @experiments = Experiment.where("title LIKE ?" , "%#{@search_query}%")
-    @response = {status: "SUCCESS", experiments: @experiments}
+    if(@search_query && @search_query != '')
+      @searched_experiments = []
+      @experiments.each do |experiment|
+      @searched_experiments << {title: experiment.title, url: experiment_path(experiment)}
+    end
+
+    @response = {status: "SUCCESS", experiments: @searched_experiments}
     respond_to do |format|
        format.json {render json: @response} 
       end
